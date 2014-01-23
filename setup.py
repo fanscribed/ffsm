@@ -20,7 +20,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 setup(
     name='ffsm',
     version='0.1.0',
-    description='A finite state machine library to support the Fanscribed Transcription Machine, among other projects.',
+    description='ffsm is for finite state machines',
     long_description=readme + '\n\n' + history,
     author='Elevencraft Inc.',
     author_email='matt@11craft.com',
