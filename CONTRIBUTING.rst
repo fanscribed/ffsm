@@ -36,8 +36,8 @@ is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Fanscribed Finite State Machine could always use more documentation, whether as part of the 
-official Fanscribed Finite State Machine docs, in docstrings, or even on the web in blog posts,
+ffsm could always use more documentation, whether as part of the
+official ffsm docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
@@ -109,3 +109,4 @@ Tips
 To run a subset of tests::
 
 	$ python -m unittest tests.test_ffsm
+

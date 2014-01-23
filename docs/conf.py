@@ -52,7 +52,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Fanscribed Finite State Machine'
+project = u'ffsm is for finite state machines'
 copyright = u'2014, Elevencraft Inc.'
 
 # The version info for the project you're documenting, acts as replacement for
