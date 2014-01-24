@@ -22,3 +22,6 @@ README.
     >>> vehicle.state
     parked
 
+    >>> vehicle.is_parked
+    True
+
