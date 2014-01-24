@@ -25,3 +25,5 @@ README.
     >>> vehicle.is_parked
     True
 
+    >>> vehicle.can_ignite
+    True

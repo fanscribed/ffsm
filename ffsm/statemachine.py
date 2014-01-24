@@ -1,6 +1,6 @@
 from six import add_metaclass
 
-from .state import state
+from .state import ValidStates, state
 
 
 class IsCurrentStateDescriptor(object):
@@ -12,24 +12,53 @@ class IsCurrentStateDescriptor(object):
         return instance.state == self._state
 
 
+class CanEventOccurDescriptor(object):
+
+    def __init__(self, event):
+        self._event = event
+
+    def __get__(self, instance, owner):
+        for t in self._event.transitions:
+            if t.from_ == instance.state:
+                return True
+        return False
+
+
+class event(object):
+
+    def __init__(self, *transitions):
+        self.transitions = transitions
+
+
+class transition(object):
+
+    def __init__(self, from_, to):
+        self.from_ = from_
+        self.to = to
+
+
 class StateMachineMeta(type):
 
     def __init__(cls, what, bases=None, dict=None):
         super(StateMachineMeta, cls).__init__(what, bases, dict)
-        # Find all states.
-        for name, possible_state in cls.states.__dict__.items():
-            if isinstance(possible_state, state):
-                # Give each state its name.
-                possible_state.name = name
-                # Attach an is_<state> descriptor to the class.
-                is_name = 'is_' + name
-                setattr(cls, is_name, IsCurrentStateDescriptor(possible_state))
+
+        # Attach is_<state> descriptors.
+        for state in cls.states.all:
+            is_name = 'is_' + state.name
+            setattr(cls, is_name, IsCurrentStateDescriptor(state))
+
+        # Attach can_<event> descriptors.
+        for name, possible_event in dict.items():
+            if isinstance(possible_event, event):
+                event.name = name
+                can_name = 'can_' + name
+                setattr(cls, can_name, CanEventOccurDescriptor(possible_event))
 
 
 @add_metaclass(StateMachineMeta)
 class StateMachine(object):
 
-    class states:
+    class states(ValidStates):
         pass
 
     def __init__(self):
