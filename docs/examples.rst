@@ -17,5 +17,5 @@ README.
     >>> vehicle = Vehicle()
 
     >>> vehicle
-    <Vehicle state machine>
+    <Vehicle state=parked>
 

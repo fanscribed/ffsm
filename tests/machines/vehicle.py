@@ -3,7 +3,8 @@ from ffsm import StateMachine, state
 
 class Vehicle(StateMachine):
 
-    parked = state()
+    class states:
+        parked = state()
 
-    initial = parked
+    initial = states.parked
 
