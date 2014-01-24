@@ -10,8 +10,6 @@ Tests for `ffsm` module.
 
 import unittest
 
-from ffsm import ffsm
-
 
 class TestFfsm(unittest.TestCase):
 

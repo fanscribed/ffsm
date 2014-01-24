@@ -4,3 +4,7 @@
 __author__ = 'Elevencraft Inc.'
 __email__ = 'matt@11craft.com'
 __version__ = '0.1.0'
+
+
+from .statemachine import StateMachine
+from .state import state

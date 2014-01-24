@@ -4,11 +4,7 @@
 import os
 import sys
 
-
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
 
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
@@ -30,6 +26,7 @@ setup(
     ],
     package_dir={'ffsm': 'ffsm'},
     include_package_data=True,
+    tests_require=['pytest'],
     install_requires=[
     ],
     license="BSD",
@@ -47,4 +44,7 @@ setup(
         'Programming Language :: Python :: 3.3',
     ],
     test_suite='tests',
+    extras_require={
+        'testing': ['pytest'],
+    },
 )

@@ -8,15 +8,16 @@ ffsm is for finite state machines
 
 Contents:
 
-.. toctree::
-   :maxdepth: 2
+..  toctree::
+    :maxdepth: 2
 
-   readme
-   installation
-   usage
-   contributing
-   authors
-   history
+    readme
+    installation
+    usage
+    examples
+    contributing
+    authors
+    history
 
 Indices and tables
 ==================
