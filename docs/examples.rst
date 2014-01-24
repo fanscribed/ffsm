@@ -19,3 +19,6 @@ README.
     >>> vehicle
     <Vehicle state=parked>
 
+    >>> vehicle.state
+    parked
+

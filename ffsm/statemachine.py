@@ -33,3 +33,7 @@ class StateMachine(object):
         # TODO: test this
         raise NotImplemented(
             'Set "initial" in StateMachine subclass to initial state')
+
+    @property
+    def state(self):
+        return self._state

@@ -1,2 +1,4 @@
 class state(object):
-    pass
+
+    def __repr__(self):
+        return getattr(self, 'name', '<unnamed state>')
